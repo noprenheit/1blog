@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Home - 1blog{% endblock %}
+
+{% block content %}
+    <div class="content-wrapper">
+        <!-- Add Post Section -->
+        <div class="add-post-section">
+            <h2>Add a New Post</h2>
+            <form action="{{ url_for('add_post') }}" method="POST">
+                <textarea name="comment" rows="4" placeholder="What is your thoughts?" required maxlength="500"></textarea>
+                <button type="submit" class="btn btn-primary">Post</button>
+            </form>
+        </div>
+
+        <!-- Posts Section -->
+        <div class="posts-section">
+            <h2>All Posts</h2>
+            {% if posts %}
+                <ul class="posts">
+                    {% for post in posts %}
+                        <li>
+                            <strong>{{ post[0] }}</strong>: {{ post[1] }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No posts to display.</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

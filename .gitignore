@@ -1,0 +1,15 @@
+node_modules/
+*.log
+.env
+.DS_Store
+Thumbs.db
+dist/
+build/
+.vscode/
+.idea/
+coverage/
+bower_components/
+jspm_packages/
+database.db
+__pycache__/
+*.pyc

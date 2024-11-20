@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Two-Factor Authentication - 1blog{% endblock %}
+
+{% block content %}
+    <h2>Two-Factor Authentication</h2>
+    <form action="{{ url_for('totp_verification') }}" method="POST">
+        <input type="text" name="totp_code" placeholder="6-digit code" required pattern="\d{6}" maxlength="6">
+        <button type="submit">Verify</button>
+    </form>
+{% endblock %}

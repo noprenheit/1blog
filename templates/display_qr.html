@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Set Up Two-Factor Authentication - 1blog{% endblock %}
+
+{% block content %}
+    <div class="qr-code-setup">
+        <h2>Set Up Two-Factor Authentication</h2>
+        <p>
+            To enhance your account security, please scan the QR code below using an
+            authenticator app like Google Authenticator or Authy.
+        </p>
+        <div class="qr-code-container">
+            <img src="data:image/png;base64,{{ qr_b64 }}" alt="QR Code for Two-Factor Authentication" class="qr-code-image">
+        </div>
+        <p>After scanning, click the button below to proceed to login.</p>
+        <a href="{{ url_for('login') }}" class="btn btn-primary">Proceed to Login</a>
+    </div>
+{% endblock %}
